@@ -29,16 +29,26 @@
     .page-view.is-active { display: block; }
 
     [data-template-id="hero-title"],
-    [data-template-id="home-intro-title"] {
+    [data-template-id="home-intro-title"],
+    [data-template-id="about-title"],
+    [data-template-id="services-title"],
+    [data-template-id="programs-title"],
+    [data-template-id="pricing-title"],
+    [data-template-id="contact-title"],
+    [data-template-id="faq-title"],
+    [data-template-id="final-cta-title"] {
       background: linear-gradient(100deg, #a52ab8, #e34ce6, #a52ab8);
       background-clip: text;
       -webkit-background-clip: text;
-      color: transparent;
+      color: transparent !important;
+      -webkit-text-fill-color: transparent;
     }
 
     [data-template-id="hero-subtitle"],
-    [data-template-id="home-intro-copy"] {
-      color: #bd68c4;
+    [data-template-id$="-copy"],
+    [data-template-id$="-desc"],
+    [data-template-id^="faq-"][data-template-id$="-a"] {
+      color: #bd68c4 !important;
     }
 
     @keyframes pageEnter {
