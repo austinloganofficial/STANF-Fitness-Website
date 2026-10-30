@@ -28,7 +28,6 @@
 
     .page-view.is-active { display: block; }
 
-    [data-template-id="hero-title"],
     [data-template-id="home-intro-title"],
     [data-template-id="about-title"],
     [data-template-id="services-title"],
@@ -44,11 +43,30 @@
       -webkit-text-fill-color: transparent;
     }
 
-    [data-template-id="hero-subtitle"],
     [data-template-id$="-copy"],
     [data-template-id$="-desc"],
     [data-template-id^="faq-"][data-template-id$="-a"] {
       color: #bd68c4 !important;
+    }
+
+    .hero-poster {
+      position: relative;
+      line-height: 0;
+    }
+
+    .hero-poster img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-poster-link {
+      position: absolute;
+      top: 64%;
+      left: 39%;
+      width: 22%;
+      height: 11%;
+      border-radius: 9999px;
     }
 
     @keyframes pageEnter {
@@ -118,7 +136,12 @@
     }
 
     @media (max-width: 767px) {
-      .hero-space { padding-top: 7rem; padding-bottom: 7rem; }
+      .hero-poster-link {
+        top: 60%;
+        left: 30%;
+        width: 40%;
+        height: 30%;
+      }
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
@@ -143,14 +166,10 @@
   </header>
   <main>
    <section id="home" data-page="home" class="page-view is-active" aria-labelledby="hero-title">
-    <div class="relative isolate overflow-hidden">
-     <img data-template-id="hero-image" class="canva-image absolute inset-0 -z-20 h-full w-full object-cover opacity-35" loading="lazy" src="./assets/stanf-eagle.svg" alt="Gold eagle emblem with outstretched wings.">
-     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/75 via-black/60 to-[#0b0b0b]"></div>
-     <div class="hero-space mx-auto max-w-7xl px-6 py-28 text-center md:px-8 md:py-40">
-      <p data-template-id="hero-eyebrow" class="canva-text font-bold uppercase tracking-[0.28em]" style="color: rgb(245, 208, 96); font-weight: 700; font-style: normal; font-size: 14px;">STANF Fitness Coaching</p>
-      <h1 data-template-id="hero-title" class="canva-text mx-auto mt-5 max-w-4xl font-black uppercase leading-[0.96] tracking-tight" style="font-weight: 900; font-style: normal; font-size: 52px;">Train Hard. Live Bold.</h1>
-      <p data-template-id="hero-subtitle" class="canva-text mx-auto mt-7 max-w-2xl leading-relaxed" style="font-weight: 400; font-style: normal; font-size: 18px;">Elite personal fitness coaching designed to unlock your peak performance. Your transformation starts now.</p><a href="#pricing" data-route="pricing" data-template-id="hero-cta" class="canva-button gold-button mt-10 inline-block rounded-full px-10 py-4 font-extrabold uppercase tracking-wide" style="background: linear-gradient(135deg, rgb(212, 175, 55), rgb(245, 208, 96)); color: rgb(26, 5, 51); font-weight: 700; font-style: normal; font-size: 16px;">Explore Memberships</a>
-     </div>
+    <div class="hero-poster">
+     <img data-template-id="hero-image" src="./assets/stanf-home-hero.png" alt="STANF Fitness Coaching. Train Hard. Live Bold. Elite personal fitness coaching designed to unlock your peak performance.">
+     <h1 id="hero-title" class="sr-only">Train Hard. Live Bold.</h1>
+     <a href="#pricing" data-route="pricing" data-template-id="hero-cta" class="hero-poster-link" aria-label="Explore memberships"></a>
     </div>
     <section class="mx-auto max-w-7xl px-6 py-20 md:px-8">
      <div data-template-id="home-intro-panel" class="canva-panel rounded-2xl px-7 py-10 text-center md:px-14" style="background: rgb(27, 27, 27);">
