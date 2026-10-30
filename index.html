@@ -28,6 +28,19 @@
 
     .page-view.is-active { display: block; }
 
+    [data-template-id="hero-title"],
+    [data-template-id="home-intro-title"] {
+      background: linear-gradient(100deg, #a52ab8, #e34ce6, #a52ab8);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    [data-template-id="hero-subtitle"],
+    [data-template-id="home-intro-copy"] {
+      color: #bd68c4;
+    }
+
     @keyframes pageEnter {
       from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
